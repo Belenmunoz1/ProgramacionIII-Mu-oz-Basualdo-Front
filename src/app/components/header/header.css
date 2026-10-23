@@ -1,0 +1,61 @@
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(250, 247, 242, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--borde);
+}
+
+.contenido {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--espacio-3) var(--espacio-5);
+  max-width: 880px;
+  margin: 0 auto;
+  padding: var(--espacio-4);
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-2);
+  text-decoration: none;
+}
+
+.logo {
+  color: var(--acento);
+  font-size: 1.1rem;
+}
+
+h1 {
+  font-size: 1.1rem;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-1);
+}
+
+nav a {
+  padding: var(--espacio-2) var(--espacio-3);
+  border-radius: 999px;
+  color: var(--texto-suave);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+nav a:hover {
+  background: var(--superficie-suave);
+  color: var(--texto);
+}
+
+nav a.activo {
+  background: var(--acento-suave);
+  color: var(--acento);
+}

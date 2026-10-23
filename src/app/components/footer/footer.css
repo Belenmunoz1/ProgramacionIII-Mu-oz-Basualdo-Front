@@ -1,0 +1,7 @@
+footer {
+  padding: var(--espacio-6) var(--espacio-4);
+  border-top: 1px solid var(--borde);
+  color: var(--texto-suave);
+  font-size: 0.85rem;
+  text-align: center;
+}

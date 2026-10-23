@@ -1,0 +1,11 @@
+.saludo {
+  margin-bottom: var(--espacio-3);
+  font-weight: 700;
+}
+
+code {
+  display: block;
+  margin-top: var(--espacio-2);
+  word-break: break-all;
+  color: var(--texto-suave);
+}

@@ -1,0 +1,52 @@
+<main class="pagina">
+  <div class="encabezado-pagina">
+    <h2>Creá tu cuenta</h2>
+    <p>Son solo unos datos, te lleva un minuto.</p>
+  </div>
+
+  <form class="tarjeta formulario" [formGroup]="registroForm" (ngSubmit)="onSubmit()">
+    <div class="campo">
+      <label for="nombre">Nombre</label>
+      <input id="nombre" type="text" formControlName="nombre" placeholder="¿Cómo te llamás?" autocomplete="name">
+      @if (registroForm.controls.nombre.invalid && registroForm.controls.nombre.touched) {
+        <small class="error">El nombre es obligatorio.</small>
+      }
+    </div>
+
+    <div class="campo">
+      <label for="email">Email</label>
+      <input id="email" type="email" formControlName="email" placeholder="tu@email.com" autocomplete="email">
+      @if (registroForm.controls.email.invalid && registroForm.controls.email.touched) {
+        <small class="error">El email es obligatorio.</small>
+      }
+    </div>
+
+    <fieldset formGroupName="direccion">
+      <legend>Dirección</legend>
+
+      <div class="campo">
+        <label for="calle">Calle</label>
+        <input id="calle" type="text" formControlName="calle" autocomplete="street-address">
+      </div>
+
+      <div class="campo">
+        <label for="ciudad">Ciudad</label>
+        <input id="ciudad" type="text" formControlName="ciudad" autocomplete="address-level2">
+      </div>
+    </fieldset>
+
+    <div class="acciones">
+      <button class="btn btn-secundario" type="button" (click)="cargarDireccionDePrueba()">Cargar dirección de prueba</button>
+      <button class="btn" type="submit" [disabled]="registroForm.invalid">Registrarme</button>
+    </div>
+  </form>
+
+  <section class="vista-previa">
+    <div class="vista-previa-titulo">
+      <span>Vista previa del formulario</span>
+      <span class="chip" [class.chip-ok]="registroForm.valid">{{ registroForm.status }}</span>
+    </div>
+    <pre>{{ registroForm.value | json }}</pre>
+    <p class="ayuda">Al registrarte, el valor se imprime en la consola del navegador (F12 → Console).</p>
+  </section>
+</main>

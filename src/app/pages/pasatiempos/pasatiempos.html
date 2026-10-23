@@ -1,0 +1,36 @@
+<main class="pagina">
+  <div class="encabezado-pagina">
+    <h2>Mis pasatiempos</h2>
+    <p>Contanos qué te gusta hacer. Podés agregar todos los que quieras.</p>
+  </div>
+
+  <form class="tarjeta formulario" [formGroup]="pasatiemposForm" (ngSubmit)="onSubmit()">
+    <div class="lista" formArrayName="pasatiempos">
+      @for (pasatiempo of pasatiempos.controls; track $index; let i = $index) {
+        <div class="campo">
+          <label for="pasatiempo-{{i}}">Pasatiempo {{ i + 1 }}</label>
+          <div class="fila">
+            <input id="pasatiempo-{{i}}" type="text" formControlName="{{i}}" placeholder="Ej: leer, correr, cocinar...">
+            @if (pasatiempos.length > 1) {
+              <button type="button" class="btn btn-icono" (click)="eliminarPasatiempo(i)" [attr.aria-label]="'Quitar pasatiempo ' + (i + 1)">✕</button>
+            }
+          </div>
+        </div>
+      }
+    </div>
+
+    <div class="acciones">
+      <button class="btn btn-secundario" type="button" (click)="agregarPasatiempo()">+ Agregar otro</button>
+      <button class="btn" type="submit">Guardar</button>
+    </div>
+  </form>
+
+  <section class="vista-previa">
+    <div class="vista-previa-titulo">
+      <span>Vista previa del formulario</span>
+      <span class="chip">{{ pasatiempos.length }} {{ pasatiempos.length === 1 ? 'pasatiempo' : 'pasatiempos' }}</span>
+    </div>
+    <pre>{{ pasatiemposForm.value | json }}</pre>
+    <p class="ayuda">Al guardar, el valor se imprime en la consola del navegador (F12 → Console).</p>
+  </section>
+</main>
