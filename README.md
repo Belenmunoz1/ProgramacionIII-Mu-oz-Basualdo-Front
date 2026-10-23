@@ -1,6 +1,6 @@
 # Programación III - Angular frontend - Muñoz - Basualdo
 
-Proyecto Angular: Header, Dashboard, Footer, login y ejercicios de angular form y service.
+Proyecto Angular:  login y ejercicios de angular form , service, routes.
 
 
 ## Ejecutar
