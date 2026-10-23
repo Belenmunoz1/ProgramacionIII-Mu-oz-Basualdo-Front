@@ -1,9 +1,34 @@
-# Programación III - Angular frontend - Muñoz - Basualdo
+# Programación III - Frontend Angular
 
-Proyecto Angular: Header, Dashboard, Footer, login y ejercicios de angular form y service.
+Proyecto frontend desarrollado con Angular para practicar componentes, routing, formularios reactivos, servicios HTTP y estructura de una aplicación web moderna.
 
+## Descripción general
 
-## Ejecutar
+Este proyecto contiene una interfaz principal con:
+
+- Header y Footer reutilizables
+- Dashboard inicial
+- Login con consumo de servicio
+- Registro con formularios reactivos
+- Pasatiempos con formularios dinámicos usando FormArray
+- Rutas configuradas para navegación entre páginas
+
+## Tecnologías utilizadas
+
+- Angular 22
+- TypeScript
+- Angular Router
+- Angular Forms
+- HttpClient
+- RxJS
+
+## Requisitos previos
+
+- Node.js 18 o superior
+- npm
+- Backend corriendo en `http://localhost:5006` para el login
+
+## Instalación
 
 ```bash
 npm install
@@ -45,5 +70,3 @@ src/
 npm run build
 npm test
 ```
-
-
